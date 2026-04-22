@@ -14,10 +14,10 @@ The [Breast Cancer Wisconsin dataset](https://scikit-learn.org/stable/modules/ge
 
 ## Methods
 
-### Task 1 — Train/Test Split
+### Train/Test Split
 Data split with at least 30% held out for testing, using `random_state=2024`.
 
-### Task 2 — Random Baseline
+### Random Baseline
 A probabilistic baseline that predicts malignant with probability equal to the training set prevalence. Used to establish a lower-bound on meaningful performance.
 
 | Metric | Baseline |
@@ -25,10 +25,10 @@ A probabilistic baseline that predicts malignant with probability equal to the t
 | Precision | ~56% |
 | Recall | ~61% |
 
-### Task 3 — Logistic Regression with Regularization
+### Logistic Regression with Regularization
 An unregularized logistic regression model (`penalty=None`) is trained, revealing mild overfitting. A train/validation split (30% of train) is used to select the L2 regularization parameter `C`, scanning values to reduce the train/validation accuracy gap without degrading overall accuracy. Final model uses `C=0.9`.
 
-### Task 4 — Confusion Matrix & Clinical Metrics
+### Confusion Matrix & Clinical Metrics
 
 | Metric | Regularized Model |
 |--------|-------------------|
@@ -41,10 +41,10 @@ An unregularized logistic regression model (`penalty=None`) is trained, revealin
 
 A dramatic improvement over the random baseline.
 
-### Task 5 — ROC Curve
+### ROC Curve
 The ROC curve (AUC = 0.99) demonstrates near-perfect separation between classes. In a cancer detection context, a higher recall threshold is preferred — it is far more dangerous to miss a true malignancy (false negative) than to flag a benign tumor for follow-up (false positive).
 
-### Task 6 — Shallow Decision Trees
+### Shallow Decision Trees
 Three decision tree classifiers are compared across `max_depth` values of 3, 5, and 7, evaluated on the validation set:
 
 | max_depth | Accuracy | Precision | Recall |
